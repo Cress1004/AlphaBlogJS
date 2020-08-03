@@ -1,0 +1,27 @@
+{
+  "name": "alphablognodejs",
+  "version": "1.0.0",
+  "description": "Use RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cress1004/AlphaBlogJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cress1004/AlphaBlogJS/issues"
+  },
+  "homepage": "https://github.com/Cress1004/AlphaBlogJS#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "until": "^0.1.1",
+    "util": "^0.12.3"
+  }
+}
