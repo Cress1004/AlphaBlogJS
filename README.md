@@ -13,3 +13,4 @@ https://alpha-blog.herokuapp.com/
 "mysql": "^2.18.1",
 "nodemon": "^2.0.4",
 "util.promisify": "^1.0.1"
+"querystring": "^0.2.0"

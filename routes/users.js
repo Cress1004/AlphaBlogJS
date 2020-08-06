@@ -1,5 +1,8 @@
-const express = require('expess');
+const express = require('express');
+const router = express.Router();
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     console.log("We are on users page.");
 })
+
+module.exports = router;

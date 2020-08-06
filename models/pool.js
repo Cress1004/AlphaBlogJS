@@ -4,19 +4,18 @@ const util = require('util');
 const mysql = require('mysql'); 
 
 const pool = mysql.createPool({
-    connectionLimit: 10,
     host: "localhost",
-    user: "haithanh",
-    password: "cress1004",
+    user: "cress",
+    password: "04101004",
     database: "alphablog"
 });
 
 pool.getConnection((err, connection) => {
     if(err){
-        console.error("Somethings went wrong");
-        throw err;
+        console.log(err);  
     }
     if(connection){
+        console.log("connected to DB");
         connection.release();
         return;
     }
