@@ -64,9 +64,7 @@ Article.prototype = {
                     console.log('Create an article error');
                     return resolve(null);
                 } else {
-                    console.log("this is return value: "+result.insertId);
-                    return resolve(result.insertId);
-                }
+1                }
             });
         });
     },
