@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql'); 
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -16,8 +17,12 @@ app.use(bodyParser.json());
 app.use('/users', usersRoute);
 app.use('/articles', articlesRoute);
 
+// set path to views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.get("/", function(req, res){
-    res.send("Home page");
-})
+    res.render('home', {});
+});
  
 app.listen(3000);

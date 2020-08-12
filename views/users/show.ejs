@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ALPHABLOG</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <%- include('../partials/navbar.ejs') %>
+            <h1>USER <%=showUser[0].username%>'s INFOR</h1>
+            <h4>User_id: <%=showUser[0].id%></h4></br>
+            <h4>User_name: <%=showUser[0].username%></h4></br>
+            <h4>Email: <%=showUser[0].email%></h4><br>
+            <h5><a href='edit'>Edit your information</h5>
+    </body>
+</html>

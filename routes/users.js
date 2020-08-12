@@ -7,16 +7,16 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try{
         const users = await user.getAll();
-        res.json(users);
+        res.render('users/index', {users:users});
     } catch(err) {
         res.json({message: err});
     }
 });
 
-router.get('/:id/show', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try{
         const showUser = await user.find(req.params.id);
-        res.json(showUser);
+        res.render('users/show', {showUser:showUser});
     } catch(err) {
         res.json({message: err});
     }

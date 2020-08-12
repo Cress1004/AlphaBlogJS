@@ -14,3 +14,4 @@ https://alpha-blog.herokuapp.com/
 "nodemon": "^2.0.4",
 "util.promisify": "^1.0.1"
 "querystring": "^0.2.0"
+install ejs
