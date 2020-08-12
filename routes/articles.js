@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async(req, res) => {
     try {
         const current_article = await article.find(req.params.id);
-        if(current_article == null) res.send("Error");
         res.render('articles/show', {current_article: current_article});
     } catch(err) {
         res.json({message: err});
