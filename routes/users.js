@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async(req, res) => {
+router.get('/:id/show', async(req, res) => {
     try{
         const showUser = await user.find(req.params.id);
         res.render('users/show', {showUser:showUser});

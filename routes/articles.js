@@ -14,25 +14,32 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async(req, res) => {
+router.get('/:id/show', async(req, res) => {
     try {
         const current_article = await article.find(req.params.id);
         res.render('articles/show', {current_article: current_article});
     } catch(err) {
         res.json({message: err});
     }
+    // id o day co the nhan bat ki gia tri nao
 });
+
 
 router.get('/new', async(req, res) => {
     try {
-        res.send("creat new article");
+        res.render('articles/new', {});
     } catch(err){
         res.json({message: err});
     }
 });
 
 router.post('/create', async(req, res) => {
-    res.send("create new article");
+    
+        console.log(req.body);
+
+        const newArticleId = await article.create(req.body.title, req.body.description, req.body.user_id);
+        res.redirect('/articles/' + newArticleId + '/show');
+    
 });
 
 router.get('/:id/delete', async(req, res) => {

@@ -12,7 +12,7 @@ const articlesRoute = require('./routes/articles');
 // Middlewares: 
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: true }));
 // Use route
 app.use('/users', usersRoute);
 app.use('/articles', articlesRoute);

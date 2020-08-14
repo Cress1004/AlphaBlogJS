@@ -54,7 +54,8 @@ Article.prototype = {
     //create
     create: function(title, description, user_id) {
         let sql = `insert into articles (title, description, user_id) values (?,?,?)` ;
-        var bind = [title, description, id];
+        var bind = [title, description, user_id];
+        console.log(bind);
         return new Promise((resolve, reject) => {
             if(title == null || description == null || user_id == null)
                 return reject(new Error('Title, description, user_id must be not null'));
@@ -64,7 +65,8 @@ Article.prototype = {
                     console.log('Create an article error');
                     return resolve(null);
                 } else {
-1                }
+                    return resolve(result.insertId);
+                }
             });
         });
     },
