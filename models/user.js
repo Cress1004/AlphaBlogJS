@@ -37,7 +37,6 @@ User.prototype = {
                     console.log("create a user error!");
                     return resolve(null);
                 } else {
-                    console.log("this is return value: "+result.insertId);
                     return resolve(result.insertId);
                 }
             });

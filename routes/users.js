@@ -24,14 +24,19 @@ router.get('/:id/show', async(req, res) => {
 
 router.get('/new', async(req, res) => {
     try{
-        res.send("create new user");
+        res.render('users/new', {});
     } catch(err) {
         res.json({message, err});
     }
 });
 
 router.post('/create', async(req, res) =>{
-    res.send("create new user");
+    try{
+        const newUserId = await user.create(req.body.username, req.body.email, req.body.password);
+        res.redirect('/users/' + newUserId + '/show');
+    } catch(err) {
+        res.json({message: err});
+    }
 });
 
 router.get('/:id/delete', async(req, res) =>{

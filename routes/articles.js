@@ -34,12 +34,12 @@ router.get('/new', async(req, res) => {
 });
 
 router.post('/create', async(req, res) => {
-    
-        console.log(req.body);
-
+    try{
         const newArticleId = await article.create(req.body.title, req.body.description, req.body.user_id);
         res.redirect('/articles/' + newArticleId + '/show');
-    
+    } catch(err){
+        res.json({message: err});
+    }
 });
 
 router.get('/:id/delete', async(req, res) => {
