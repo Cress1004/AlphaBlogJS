@@ -7,32 +7,71 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
+<style>
+    .nav{
+        float:left;
+        padding-left:2%;
+        padding-right:5%;
+        padding-top: 10%;
+        padding-bottom: 25%;
+    }
+    .new{
+        float: right;
+        padding-right: 40%;
+    }
+    table, th, td{
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+
 <body>
     <%- include ('../partials/navbar.ejs') %>
-        <h1>ARTICLES</h1>
-        <div>
-            <%  for (let article of articles){ %>
-                <a href="/articles/<%=article.id%>/show">Title:
-                <%= article.title %>
-                </a>
-                </br>
-                Content:
-                <%= article.description %>
-                    </br>
-                    -----------------------------
-                    </br>
-                    <% } %>
+    <div class = "nav">
+        <ul>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul>
+    </div>
 
-        </div>
-
-        <div>
+    <div>    
+        <h1>ARTICLES LIST</h1> 
+        <div class="new">
             <a href='new'>
-                <strong><em><small>Create new article here</small></em></strong>
+                <strong><em><h6>Create new article here</h6></em></strong>
             </a> 
-            </div>
+        </div>
+        </br>
+        <div>   
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>More</th>
+                </tr>
+                <%  for (let article of articles){ %>
+                    <tr>
+                        <td width="30px"><%= article.id %></td>
+                        <td width="100px">
+                            <a href="/articles/<%=article.id%>/show"><%= article.title %></a>
+                        </td>    
+                        <td span="1" width="150px">
+                            <%= article.description %>
+                        </td>
+                        <td width="100px">
+                            <a href="#">Edit this article</a>
+                        </td>
+                    </tr>
+                <% } %>
+                </tr>
+            </table>
+        </div>
+    </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
+

@@ -9,18 +9,47 @@
 
 <body>
     <%- include ('../partials/navbar.ejs') %>
+    <div style= "float:left; padding-left:2%; padding-right:5%;
+    padding-top: 10%;padding-bottom: 25%"">
+        <ul>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/users">Users</a></li>
+        </ul>
+    </div>
         <h1>CREATE NEW USER</h1>
         <form action="/users/create" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" name="username" autofocus="true" placeholder="Enter username">
-            </br>
-            <label for="email">Email:</label>
-            <input type="text" name="email" autofocus="true" placeholder="Enter email">
-            </br>
-            <label for="password">Password: </label>
-            <input type="text" name="password" autofocus="true" placeholder="Password">
-            </br>
-            <input type="submit" value="Create user">
+            <table>
+                <tr>
+                    <td>            
+                        <label for="username">Username:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="username" autofocus="true" placeholder="Enter username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="email" autofocus="true" placeholder="Enter email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password: </label>
+                    </td>
+                    <td>
+                        <input type="text" name="password" autofocus="true" placeholder="Password">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Create user">
+                    </td>
+                </tr>
+            </table>
         </form>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -9,13 +9,35 @@
 
 <body>
     <%- include ('../partials/navbar.ejs') %>
-    <h1>USER</h1>
+   
+    <div style= "float:left; padding-left:2%; padding-right:5%;
+    padding-top: 10%;padding-bottom: 25%"">
+        <ul>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul>
+    </div>
+    <h1>USER LIST</h1>
+    <div style = "float: right;padding-right: 40%">
+        <a href='users/new'>
+            <strong><em><h6>Create new article here</h6></em></strong>
+        </a> 
+    </div></br>
     <div>
-        <% for(let user of users){ %>
-        <h2><a href = "<%=user.id%>/show"> <%=user.username%></a></h2>
-            <small><a href='edit'>Edit your information</small></br>
-        ----------------------
-        <%}%>
+        <table>
+            <tr>
+                <th width = "30px">Id</th>
+                <th width = "150px">Username</th>
+                <th>More</th>
+            </tr>
+            <% for(let user of users){ %>
+                <tr>
+                    <td width="30px"> <%=user.id%></td>
+                    <td width="150px"><a href = "users/<%=user.id%>/show"><%= user.username %></a></td>
+                    <td><a href = "/show">Edit your account</a></td>
+                </tr>
+                <%}%>
+        </table>
     </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

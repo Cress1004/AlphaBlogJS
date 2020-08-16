@@ -7,6 +7,13 @@
     </head>
     <body>
         <%- include('../partials/navbar.ejs') %>
+        <div style= "float:left; padding-left:2%; padding-right:5%;
+        padding-top: 10%;padding-bottom: 25%"">
+            <ul>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/users">Users</a></li>
+            </ul>
+            </div>
         <div>
             <% if(showUser[0] == undefined){%>
                 <h1>User is not exist</h1>

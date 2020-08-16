@@ -7,6 +7,13 @@
     </head>
     <body>
         <%- include('../partials/navbar.ejs') %>
+        <div style= "float:left; padding-left:2%; padding-right:5%;
+        padding-top: 10%;padding-bottom: 25%"">
+        <ul>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul>
+        </div>
         <div>
         <% if(current_article[0] == undefined){ %>
             <h1>Article is not exist</h1>
@@ -15,7 +22,7 @@
             <h3>ID: <%=current_article[0].id%></h3>
             <h3>Title: <%=current_article[0].title%></h3>
             <h3>Description: <%=current_article[0].description%></h3>
-        <h5><a href='edit'>Edit this article</h5>
+        <small><em><strong><a href='edit'>Edit this article</strong></em></small>
         <% } %>
         </div>
        
